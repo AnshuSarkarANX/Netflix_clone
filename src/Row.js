@@ -13,8 +13,9 @@ function Row({ title, fetchUrl }) {
   }, [fetchUrl]);
   console.log(movies);
   return (
-    <div>
+    <div className="row">
       <h2>{title}</h2>
+      <div className="row_posters"></div>
     </div>
   );
 }
