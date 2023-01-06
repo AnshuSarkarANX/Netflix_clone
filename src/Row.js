@@ -18,6 +18,7 @@ function Row({ title, fetchUrl }) {
       <div className="row_posters">
         {movies.map((movie) => (
           <img
+            className="row_image"
             src={`${img_url}${movie.poster_path}`}
             alt={movie.original_title}
           ></img>
