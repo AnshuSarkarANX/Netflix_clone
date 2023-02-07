@@ -1,3 +1,6 @@
+.row{
+  margin-left: 12px;
+}
 .row_posters{
  display: flex;
  overflow-y:hidden;
@@ -16,6 +19,9 @@
     transition: transform 300ms;
 }
 .row_image:hover{
- transform: scale(1.1);
- 
+ transform: scale(1.07);
 }
+.row_imageLarge{
+    height:250px;
+}
+.row_imageLarge:hover{transform: scale(1.1);}
