@@ -1,5 +1,6 @@
 .row{
   margin-left: 12px;
+  color: whitesmoke;
 }
 .row_posters{
  display: flex;
@@ -24,4 +25,5 @@
 .row_imageLarge{
     height:250px;
 }
-.row_imageLarge:hover{transform: scale(1.1);}
+.row_imageLarge:hover{transform: scale(1.1);
+transition: all 0.3s ease-in;}
