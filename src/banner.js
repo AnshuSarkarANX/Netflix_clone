@@ -4,6 +4,10 @@ import requests from "./request";
 import "./banner.css";
 const img_url = "https://image.tmdb.org/t/p/original/";
 
+function truncate(str, n) {
+  return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+}
+
 function Banner() {
   const [movie, setMovie] = useState([]);
   useEffect(() => {
@@ -29,11 +33,13 @@ function Banner() {
       }}
     >
       <div className="BannerComponents">
-        <h1>{movie.title || movie.name || movie.original_name}</h1>
+        <h1 className="BannerTitle">
+          {movie.title || movie.name || movie.original_name}
+        </h1>
         <div>
           <button className="ButtonBanner">Play</button>
           <button className="ButtonBanner">Add to watch list</button>
-          <p>{movie.overview}</p>
+          <p className="BannerDescription"> {truncate(movie.overview, 150)}</p>
         </div>
       </div>
     </header>
