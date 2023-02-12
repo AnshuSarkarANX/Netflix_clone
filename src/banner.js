@@ -24,25 +24,28 @@ function Banner() {
   }, []);
 
   return (
-    <header
-      className="banner"
-      style={{
-        backgroundSize: "cover",
-        backgroundImage: `url("${img_url}${movie.backdrop_path}")`,
-        backgroundPosition: "center center",
-      }}
-    >
-      <div className="BannerComponents">
-        <h1 className="BannerTitle">
-          {movie.title || movie.name || movie.original_name}
-        </h1>
-        <div>
-          <button className="ButtonBanner">Play</button>
-          <button className="ButtonBanner">Add to watch list</button>
-          <p className="BannerDescription"> {truncate(movie.overview, 150)}</p>
+    <>
+      <header
+        className="banner"
+        style={{
+          backgroundSize: "cover",
+          backgroundImage: `url("${img_url}${movie.backdrop_path}")`,
+          backgroundPosition: "center center",
+        }}
+      >
+        <div className="BannerComponents">
+          <h1 className="BannerTitle">
+            {movie.title || movie.name || movie.original_name}
+          </h1>
+          <div>
+            <button className="ButtonBanner">Play</button>
+            <button className="ButtonBanner">Add to watch list</button>
+            <p className="BannerDescription">{truncate(movie.overview, 150)}</p>
+          </div>
         </div>
-      </div>
-    </header>
+        <div className="fade_bottom" />
+      </header>
+    </>
   );
 }
 
