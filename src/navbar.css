@@ -1,0 +1,22 @@
+.nav{
+
+}
+.nav_black{
+    
+}
+.navbar_container{
+display: flex;
+justify-content: space-between;
+padding-top: 2vh;
+}
+.Logo{
+  height: 5vh;  
+  padding-left: 2vw;
+  cursor:pointer;
+}
+.avatar{
+    height: 6vh;
+    border-radius: 4px;
+    cursor:pointer;
+    padding-right: 6vw;
+}
