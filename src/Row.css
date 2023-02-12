@@ -1,12 +1,16 @@
 .row{
   margin-left: 12px;
+  padding-bottom: 0.7rem;
   color: whitesmoke;
+}
+.RowTitle{
+    margin:0%;
 }
 .row_posters{
  display: flex;
  overflow-y:hidden;
  overflow-x:scroll;
- padding: 10px 5px ;
+ padding: 20px 10px 5px ;
 }
 .row_posters::-webkit-scrollbar{
     display: none;
