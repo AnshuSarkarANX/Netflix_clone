@@ -3,11 +3,13 @@ import Row from "./Row";
 import "./App.css";
 import request from "./request";
 import Banner from "./banner";
+import Navbar from "./navbar";
 
 function App() {
   return (
     <>
       <div className="App">
+        <Navbar />
         <Banner />
         <Row title="Originals" fetchUrl={request.NetflixOriginals} isLargeRow />
         <Row title="Trending Movies" fetchUrl={request.Trending} />
