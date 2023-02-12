@@ -2,7 +2,7 @@
     color: white;
     margin: 0%;
     object-fit: contain;
-    height: 450px;
+    height: 34rem;
 }
 .BannerComponents{
     margin:  0 0 4rem;
@@ -38,5 +38,10 @@
 .ButtonBanner:hover{
     color: black;
     background-color: whitesmoke;
-    transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in    ;
+}
+.fade_bottom{
+    height:8rem; 
+    margin-top: -3.5rem;
+    background-image:linear-gradient(180deg,transparent,rgba(37, 37, 37, 0.5),#111);
 }
