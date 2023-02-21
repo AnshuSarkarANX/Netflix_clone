@@ -1,11 +1,11 @@
 .banner{
+    position: relative;
     color: white;
     margin: 0%;
     object-fit: contain;
     height: 34rem;
 }
 .BannerComponents{
-    margin:  0 0 4rem;
     padding:5rem;
     padding-top: 12rem;
 }
@@ -41,7 +41,6 @@
     transition: all 0.2s ease-in    ;
 }
 .fade_bottom{
-    height:8rem; 
-    margin-top: -3.5rem;
-    background-image:linear-gradient(180deg,transparent,rgba(37, 37, 37, 0.5),#111);
+    height:6rem;
+    background-image:linear-gradient(180deg,transparent,rgba(37, 37, 37, 0.3),#111);
 }
