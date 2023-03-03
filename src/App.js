@@ -1,24 +1,25 @@
 import React from "react";
-import Row from "./Row";
-import "./App.css";
-import request from "./request";
-import Banner from "./banner";
-import Navbar from "./navbar";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+// Components
 
+import "./App.css";
+import HomeScreen from "./Screens/HomeScreen/Homescreen.js";
+import LoginScreen from "./Screens/LoginScreen/LoginScreen.js";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(<Route path="/" element={<HomeScreen />} />)
+);
+const user = null;
 function App() {
   return (
     <>
       <div className="App">
-        <Navbar />
-        <Banner />
-        <Row title="Originals" fetchUrl={request.NetflixOriginals} isLargeRow />
-        <Row title="Trending Movies" fetchUrl={request.Trending} />
-        <Row title="TopRated Movies" fetchUrl={request.TopRated} />
-        <Row title=".Action Movies" fetchUrl={request.ActionMovies} />
-        <Row title="Comedy Movies" fetchUrl={request.ComedyMovies} />
-        <Row title="Horror Movies" fetchUrl={request.HorrorMovies} />
-        <Row title="Romance Movies" fetchUrl={request.RomanceMovies} />
-        <Row title="Documantaries" fetchUrl={request.Documantaries} />
+        {!user ? <LoginScreen /> : <RouterProvider router={router} />}
       </div>
     </>
   );
