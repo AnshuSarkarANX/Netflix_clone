@@ -14,7 +14,7 @@ import LoginScreen from "./Screens/LoginScreen/LoginScreen.js";
 const router = createBrowserRouter(
   createRoutesFromElements(<Route path="/" element={<HomeScreen />} />)
 );
-const user = null;
+const user = 0;
 function App() {
   return (
     <>
