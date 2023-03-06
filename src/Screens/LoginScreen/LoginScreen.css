@@ -34,7 +34,7 @@
   position: relative;
   z-index: 1;
   color: aliceblue;
-  top: 30%;
+  top: 30vh;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
@@ -42,6 +42,10 @@
   
   
 }
+@media only screen and (max-height: 767px) {
+  .LoginScreen_body{ top: 25vh;}
+}
+
 .LoginScreen_body >h1{
   font-size: 3rem;
   margin: 0.05rem;  
