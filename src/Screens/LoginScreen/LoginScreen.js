@@ -16,7 +16,7 @@ function LoginScreen() {
           Sign Up
         </button>
         <div className="LoginScreen_body">
-          {SignIn ? (
+          {Signin ? (
             <SignIn />
           ) : (
             <>
