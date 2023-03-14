@@ -11,6 +11,10 @@ function SignIn() {
         <button type="submit" name="submit">
           Submit
         </button>
+        <h4>
+          <span className="signUp_grey">New to Netflix? </span>
+          <span className="signUp_link">Signup Now.</span>
+        </h4>
       </form>
     </div>
   );
