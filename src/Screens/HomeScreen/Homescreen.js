@@ -3,9 +3,10 @@ import Row from "./Row";
 import request from "../../request";
 import Banner from "./banner";
 import Navbar from "./navbar";
+import "./Homescreen.css";
 function HomeScreen() {
   return (
-    <>
+    <div className="homescreen">
       <Navbar />
       <Banner />
       <Row title="Originals" fetchUrl={request.NetflixOriginals} isLargeRow />
@@ -16,7 +17,7 @@ function HomeScreen() {
       <Row title="Horror Movies" fetchUrl={request.HorrorMovies} />
       <Row title="Romance Movies" fetchUrl={request.RomanceMovies} />
       <Row title="Documantaries" fetchUrl={request.Documantaries} />
-    </>
+    </div>
   );
 }
 export default HomeScreen;
