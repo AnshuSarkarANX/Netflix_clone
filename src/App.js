@@ -1,25 +1,16 @@
+/* eslint-disable no-unreachable */
 import { React, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate, Outlet, redirect } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 //components
 import "./App.css";
-import HomeScreen from "./Screens/HomeScreen/Homescreen.js";
-import LoginScreen from "./Screens/LoginScreen/LoginScreen.js";
 import { auth } from "./firebase.js";
-import { login, logout } from "./features/userSlice";
+import { login, logout, selectUser } from "./features/userSlice";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<HomeScreen />} />)
-);
 function App() {
-  const user = null;
+  const user = useSelector(selectUser);
+  console.log(user);
   const diapatch = useDispatch();
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (userAuth) => {
@@ -32,11 +23,12 @@ function App() {
     return unsubscribe;
   });
   return (
-    <>
-      <div className="App">
-        {!user ? <LoginScreen /> : <RouterProvider router={router} />}
+    !user ? <Navigate to="LoginPage" /> : <Navigate to="Home" />,
+    (
+      <div>
+        <Outlet />
       </div>
-    </>
+    )
   );
 }
 
