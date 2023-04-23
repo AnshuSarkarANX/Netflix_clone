@@ -1,34 +1,47 @@
 /* eslint-disable no-unreachable */
 import { React, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, Outlet, redirect } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 //components
 import "./App.css";
 import { auth } from "./firebase.js";
 import { login, logout, selectUser } from "./features/userSlice";
+import HomeScreen from "./Screens/HomeScreen/Homescreen.js";
+import LoginScreen from "./Screens/LoginScreen/LoginScreen.js";
+import ProfileScreen from "./Screens/ProfileScreen/ProflieScreen.js";
+import Error from "./ErrorPage.js";
 
 function App() {
   const user = useSelector(selectUser);
   console.log(user);
-  const diapatch = useDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (userAuth) => {
-      userAuth
-        ? //logged in
-          diapatch(login({ uid: userAuth.uid, email: userAuth.email }))
-        : //logged out
-          diapatch(logout);
+      if (userAuth) {
+        //logged in
+        dispatch(login({ uid: userAuth.uid, email: userAuth.email }));
+      }
+      //logged out
+      else dispatch(logout);
     });
     return unsubscribe;
-  });
+  }, [dispatch]);
   return (
-    !user ? <Navigate to="LoginPage" /> : <Navigate to="Home" />,
-    (
-      <div>
-        <Outlet />
-      </div>
-    )
+    <div className="app">
+      <BrowserRouter>
+        {!user ? (
+          <LoginScreen />
+        ) : (
+          <Routes>
+            <Route path="/profilescreen" element={<ProfileScreen />} />
+            <Route exact path="/" element={<HomeScreen />} />
+            <Route path="/login" element={<LoginScreen />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        )}
+      </BrowserRouter>
+    </div>
   );
 }
 
