@@ -23,19 +23,19 @@ function App() {
         dispatch(login({ uid: userAuth.uid, email: userAuth.email }));
       }
       //logged out
-      else dispatch(logout);
+      else dispatch(logout());
     });
     return unsubscribe;
   }, [dispatch]);
   return (
-    <div className="app">
+    <div className="App">
       <BrowserRouter>
         {!user ? (
           <LoginScreen />
         ) : (
           <Routes>
-            <Route path="/profilescreen" element={<ProfileScreen />} />
             <Route exact path="/" element={<HomeScreen />} />
+            <Route path="/profilescreen" element={<ProfileScreen />} />
             <Route path="/login" element={<LoginScreen />} />
             <Route path="*" element={<Error />} />
           </Routes>
