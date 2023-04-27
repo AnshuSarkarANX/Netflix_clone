@@ -3,7 +3,6 @@ import Row from "./Row";
 import request from "../../request";
 import Banner from "./banner";
 import Navbar from "./navbar";
-import "./Homescreen.css";
 function HomeScreen() {
   return (
     <div className="homescreen">
