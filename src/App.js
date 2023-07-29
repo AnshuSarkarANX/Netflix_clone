@@ -14,7 +14,7 @@ import Error from "./ErrorPage.js";
 
 function App() {
   const user = useSelector(selectUser);
-  console.log(user);
+
   const dispatch = useDispatch();
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (userAuth) => {

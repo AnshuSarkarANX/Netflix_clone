@@ -1,9 +1,12 @@
 import { React, useState } from "react";
+import { auth } from "../../firebase";
+import { signInAnonymously } from "firebase/auth";
 import "./LoginScreen.css";
 import SignIn from "../SignupScreen/Signup.js";
 
 function LoginScreen() {
   const [Signin, setSignin] = useState(false);
+
   return (
     <div className="LoginScreen">
       <div className="LoginScreen_background">
@@ -37,6 +40,14 @@ function LoginScreen() {
                   Get Started
                 </button>
               </div>
+              <div className="skipButton">
+                <button
+                  className="LoginScreen_Skip"
+                  onClick={() => signInAnonymously(auth)}
+                >
+                  Skip To Homepage
+                </button>
+              </div>
             </>
           )}
         </div>
@@ -44,5 +55,4 @@ function LoginScreen() {
     </div>
   );
 }
-
 export default LoginScreen;
