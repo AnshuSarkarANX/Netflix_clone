@@ -1,12 +1,18 @@
 import React from "react";
 import "./ProflieScreen.css";
 import Navbar from "../../Screens/HomeScreen/navbar.js";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 import { auth } from "../../firebase";
 
 function ProflieScreen() {
   const user = useSelector(selectUser);
+  const Navigate = useNavigate();
+  const goHome = () => {
+    window.history.replaceState(null, "", "/");
+    Navigate("/");
+  };
   return (
     <div className="profileScreen">
       <Navbar />
@@ -25,6 +31,7 @@ function ProflieScreen() {
                 className="SignOut"
                 onClick={() => {
                   auth.signOut();
+                  goHome();
                 }}
               >
                 Sign Out
