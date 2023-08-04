@@ -29,6 +29,11 @@ function navbar() {
           alt="logo"
         />
         <img
+          className="Search"
+          src="https://p1.hiclipart.com/preview/996/255/590/find-icon-glass-icon-magnifier-icon-magnifying-icon-search-icon-zoom-icon-text-circle-logo-symbol-png-clipart.jpg"
+          alt="Search Box"
+        />
+        <img
           onClick={() => Navigate("/profilescreen")}
           className="avatar"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlxIi9VcRXindEC1M94AOqTnCaU0-16LidGg&usqp=CAU"

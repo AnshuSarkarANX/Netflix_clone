@@ -11,7 +11,7 @@ function HomeScreen() {
       <Row title="Originals" fetchUrl={request.NetflixOriginals} isLargeRow />
       <Row title="Trending Movies" fetchUrl={request.Trending} />
       <Row title="TopRated Movies" fetchUrl={request.TopRated} />
-      <Row title=".Action Movies" fetchUrl={request.ActionMovies} />
+      <Row title="Action Movies" fetchUrl={request.ActionMovies} />
       <Row title="Comedy Movies" fetchUrl={request.ComedyMovies} />
       <Row title="Horror Movies" fetchUrl={request.HorrorMovies} />
       <Row title="Romance Movies" fetchUrl={request.RomanceMovies} />
