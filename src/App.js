@@ -36,7 +36,6 @@ function App() {
           <Routes>
             <Route exact path="/" element={<HomeScreen />} />
             <Route path="/profilescreen" element={<ProfileScreen />} />
-            <Route path="/login" element={<LoginScreen />} />
             <Route path="*" element={<Error />} />
           </Routes>
         )}
