@@ -40,6 +40,13 @@
     background-color: whitesmoke;
     transition: all 0.2s ease-in    ;
 }
+.tmdb_logo{
+    height: 2vh;
+    width: 4.5vw;
+    position: absolute;
+    right: 2%;
+    filter: drop-shadow(0 0 3px black);
+}
 .fade_bottom{
     height:6rem;
     background-image:linear-gradient(180deg,transparent,rgba(37, 37, 37, 0.3),#111);

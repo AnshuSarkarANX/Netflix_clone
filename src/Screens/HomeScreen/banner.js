@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "../../axios";
 import requests from "../../request";
 import "./banner.css";
+import Tmdb_logo from "./tmdb_logo.svg";
+
 const img_url = "https://image.tmdb.org/t/p/original/";
 
 function truncate(str, n) {
@@ -43,6 +45,7 @@ function Banner() {
             <p className="BannerDescription">{truncate(movie.overview, 150)}</p>
           </div>
         </div>
+        <img className="tmdb_logo" src={Tmdb_logo} alt="tmdb_logo" /> 
         <div className="fade_bottom" />
       </header>
     </>

@@ -2,6 +2,7 @@
 /* eslint-disable no-restricted-globals */
 import { React, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import search from "./search.svg";
 import "./navbar.css";
 
 function navbar() {
@@ -28,17 +29,20 @@ function navbar() {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/800px-Logonetflix.png?20170904093427"
           alt="logo"
         />
-        <img
-          className="Search"
-          src="https://p1.hiclipart.com/preview/996/255/590/find-icon-glass-icon-magnifier-icon-magnifying-icon-search-icon-zoom-icon-text-circle-logo-symbol-png-clipart.jpg"
-          alt="Search Box"
-        />
-        <img
-          onClick={() => Navigate("/profilescreen")}
-          className="avatar"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlxIi9VcRXindEC1M94AOqTnCaU0-16LidGg&usqp=CAU"
-          alt="your avatar"
-        />
+        <div className="nav_right">
+          <p className={`Search_container_hide ${show && "Search_container"}`}>
+            <span>
+              <img className="Search" src={search} alt="Search" />
+            </span>
+            <span className="Search_text">Search</span>
+          </p>
+          <img
+            onClick={() => Navigate("/profilescreen")}
+            className="avatar"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlxIi9VcRXindEC1M94AOqTnCaU0-16LidGg&usqp=CAU"
+            alt="your avatar"
+          />
+        </div>
       </div>
     </div>
   );
